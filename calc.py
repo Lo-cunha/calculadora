@@ -1,18 +1,14 @@
-def div ():
-    a = int(input("Digite o primeiro número: "))
-    b = int(input("Digite o segundo número: "))
+def valores():
+    a = float(input("Digite o primeiro número: "))
+    b = float(input("Digite o segundo número: "))
+    return a, b
+def div (a,b):
     print(a/b)
-def mult ():
-    a = int(input("Digite o primeiro número: "))
-    b = int(input("Digite o segundo número: "))
+def mult (a,b):
     print(a*b)
-def soma ():
-    a = int(input("Digite o primeiro número: "))
-    b = int(input("Digite o segundo número: "))
+def soma (a,b):
     print(a+b)
-def sub ():
-    a = int(input("Digite o primeiro número: "))
-    b = int(input("Digite o segundo número: "))
+def sub (a,b):
     print(a-b)
 while True:
     print("\n=== Calculadora ===")
@@ -21,16 +17,17 @@ while True:
     print("3 - Multiplicação")
     print("4 - Divisão")
     print("0 - Sair")
-
     opcao = input("Escolha uma opção: ")
-    if opcao == "1":
-        soma()
-    elif opcao == "2":
-        sub()
-    elif opcao == "3":
-        mult()
-    elif opcao == "4":
-        div()
+    if opcao in ["1", "2", "3", "4"]:
+        a, b = valores()
+        if opcao == "1":
+            soma(a, b)
+        elif opcao == "2":
+            sub(a, b)
+        elif opcao == "3":
+            mult(a, b)
+        elif opcao == "4":
+            div(a, b)
     elif opcao == "0":
         print("Saindo...")
         break
